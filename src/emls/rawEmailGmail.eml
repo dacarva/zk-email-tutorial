@@ -1,0 +1,155 @@
+Received: from MW5PR19MB5508.namprd19.prod.outlook.com (2603:10b6:303:193::10)
+ by BY5PR19MB3908.namprd19.prod.outlook.com with HTTPS; Sun, 4 Feb 2024
+ 15:27:59 +0000
+Received: from DUZP191CA0003.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:4f9::22)
+ by MW5PR19MB5508.namprd19.prod.outlook.com (2603:10b6:303:193::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7249.33; Sun, 4 Feb
+ 2024 15:27:57 +0000
+Received: from DU2PEPF00028D07.eurprd03.prod.outlook.com
+ (2603:10a6:10:4f9:cafe::7a) by DUZP191CA0003.outlook.office365.com
+ (2603:10a6:10:4f9::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7249.34 via Frontend
+ Transport; Sun, 4 Feb 2024 15:27:56 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.219.174)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 209.85.219.174 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.219.174; helo=mail-yb1-f174.google.com; pr=C
+Received: from mail-yb1-f174.google.com (209.85.219.174) by
+ DU2PEPF00028D07.mail.protection.outlook.com (10.167.242.167) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7249.19 via Frontend Transport; Sun, 4 Feb 2024 15:27:56 +0000
+X-IncomingTopHeaderMarker:
+ OriginalChecksum:FAA57724DD4728C9F5E477886F6AACAB42331194A841EE8EA387767BD77DD909;UpperCasedChecksum:88D638A321856F350FCB046B29B36BFD986F53EED869DCABBF776DA9BF5AF0B2;SizeAsReceived:2436;Count:13
+Received: by mail-yb1-f174.google.com with SMTP id 3f1490d57ef6-dc6c0dc50dcso2928954276.2
+        for <da-carva@hotmail.com>; Sun, 04 Feb 2024 07:27:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707060476; x=1707665276; darn=hotmail.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=hNTHknhi1Cw+P7mSxjDRKWx+4SiB1dmLYxZte07FySA=;
+        b=Di3zRZkmLK7RdzMd0l90GwHHcUyUg28AA0lM+v3Q55U0QZIHlHKB7w2Jjb6vRHBBUB
+         dcvyoDjthyaHwuiHKNT8DVaZw+PNJr7J4LupUvRCXIaYfDEJhhT2ddDF8hIu/28Wg07y
+         v7/tCQKQUG1HuBSa1yBFikEIlRv/SvInakQ4vSIZ+K1xOSkq3faBlltNvCXi5RTMdKFa
+         so0fQmeZsJq3wtzDkyap4WZjGnXlX4/ksD6fa/pW9ZQ2tGXbVuvpv9COcc44SzaFVjlm
+         QyPxWOlEIteP6Xegjp2W9dppfGuxY8ujy9p583/9WU4FXTlj8O7EGoYqTbxhNoMu5TZG
+         kl3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707060476; x=1707665276;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hNTHknhi1Cw+P7mSxjDRKWx+4SiB1dmLYxZte07FySA=;
+        b=lHovqmsFIE1OAboobXkSLFd8gUmubTpAhgawHehQl9sNmta3R9xaNVKr3ICiQ3x/SS
+         d/8qilPBcCUHpDNKAUlpuLzoY9qhm8pBfc75hS82crZFs6RCcSUb76Np74olqR71oRo/
+         cDiVoRMa3exAhg/QMAB5EmNCupZc6PsmOXbHCWRx9H/LLGN/fcl8d+85XLiLdAUul8Jl
+         O87uX6tANo0kastyFjxFhDWkNproryGn3TL9So4Q4qGpfkX28t62Fahv4uoxTmnehAZH
+         B1hnAaJixTBPuykGYOSN8WDiOBuNg+bcBVTcLhm8YrtwsZIEy9tcCsubFuzFBIgRUvm7
+         e0iA==
+X-Gm-Message-State: AOJu0YzR6SKOAEwCq8R1xVO79mpc1c4DvhyecyHwdnsF1Q9kGqFMaw0J
+	9fTrohGF8FjbH9Epru8oC78uesmPmcMGk1R80ao3u23oIZOmx+FALZ5TsMFVqLDdv/prVa5rF0y
+	GqTjBAI0ZYvvlIXsuq/cyBlMiSve61+4Ocg1Szw==
+X-Google-Smtp-Source: AGHT+IEUM8H9r6/257CEl3vj42yHIaRFLMsx4jvJq4qiHTHaecbndHg7dTmXE/9vziiWXSFYjULZZoPXXn7EavCF3wY=
+X-Received: by 2002:a25:9f0e:0:b0:dbe:a0e2:c637 with SMTP id
+ n14-20020a259f0e000000b00dbea0e2c637mr10913491ybq.65.1707060475754; Sun, 04
+ Feb 2024 07:27:55 -0800 (PST)
+From: David Carvajal <davidfelipec88@gmail.com>
+Date: Sun, 4 Feb 2024 10:27:41 -0500
+Message-ID: <CAF2wv31H=rTPG7GCJ+9OU4K10irG=OZHjOdXyOaM-JLLY5_20g@mail.gmail.com>
+Subject: Hello world
+To: David Felipe Carvajal <da-carva@hotmail.com>
+Content-Type: multipart/alternative; boundary="000000000000447c4c06108ffda9"
+X-IncomingHeaderCount: 13
+Return-Path: davidfelipec88@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Feb 2024 15:27:56.5913
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 6957bc03-58e5-4771-e2ac-08dc2595dce1
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ DU2PEPF00028D07:EE_|MW5PR19MB5508:EE_|BY5PR19MB3908:EE_
+X-MS-Exchange-Organization-AuthSource:
+ DU2PEPF00028D07.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 2/4/2024 3:26:17 PM
+X-MS-Office365-Filtering-Correlation-Id: 6957bc03-58e5-4771-e2ac-08dc2595dce1
+X-MS-Exchange-EOPDirect: true
+X-Sender-IP: 209.85.219.174
+X-SID-PRA: DAVIDFELIPEC88@GMAIL.COM
+X-SID-Result: PASS
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2024 15:27:56.4820
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6957bc03-58e5-4771-e2ac-08dc2595dce1
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource:
+ DU2PEPF00028D07.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+ 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW5PR19MB5508
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.5718866
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7249.032
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;ex:0;auth:1;dest:I;ENG:(5062000305)(920221119095)(90000117)(920221120095)(90011020)(91015020)(91040095)(9050020)(9060121)(9081003)(9100341)(944500132)(4810010)(4910033)(9930004)(9545005)(10172021)(9320005)(120001);
+X-Message-Info:
+	qZelhIiYnPndRiIFeyHr4d0SW6wnzrzDkEBO6p7Mly4bfwbamqolW1XxjjemNPz54R2ff7pa0aE6FrVA+KUTn9uzKi9O6qJfb7qgD9Z0r/m8ncxpd3QKzYyS5PGErWWCqA7aWpiaQ+UXNR2nF9Dy2gf5+6aLg1PDjM8Hwt5PFIjNceeijsbdD2VHdUViTV0UZHDH1QxPDSjlUN0l8elNnA==
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MTtHRD0yO1NDTD0tMQ==
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?b1VpdWViYnNpR2IvSXNzMFNIYXFlRHNZUU8zR3dnOXQxYkNpdlBCNTM5V1JE?=
+ =?utf-8?B?ZFpSZy9HSUNQdHk2SjJTN2lrMlI3UHNZMVM1RWYwSFRNODdYVWlnc0ppd0JZ?=
+ =?utf-8?B?cEhpSkNDeVNYaXBtSmYzMGVraXFXd2hzSGNUL09zQXBhSHJwTHpNVlUxSE1r?=
+ =?utf-8?B?WFVBNG5rSWdRclhFeXJHQ25hQmxGR0tXcjh0SSs2SjVPRTVzUjJQbEJSb2s4?=
+ =?utf-8?B?VWl6c29qNUpmQjVqYUhzUVA5Y3lxT05mK1RVc3hnREx0MVFZTENydGdrdVJP?=
+ =?utf-8?B?QzZUakluWUZiN1dWazJSUzBqNnhQOHFlRlRnTjFMZ0NtVi9iNC8wR3BuNk5m?=
+ =?utf-8?B?dEoxK1ZUZ005cEpKbDQ0dHRDbTNpWUY4WUlQWU42MUVwZ1JMa1pvZTl4eit1?=
+ =?utf-8?B?NVFMU284UnZvOEhickFGb2w0TWVsMnZwV2hMK0tydmYvUzBZUkJ0ZTk5NUVl?=
+ =?utf-8?B?UFRPRGswV2NEVnZtM2xGaExyeS9lNE90SzVUR0JoOC9CZUlPMUFMNkRZc2p0?=
+ =?utf-8?B?b2VEV3BjU2M4NjQvaUJuZ0VNcmI1SldxZ0NGR3VvN2oyS2Q1MWZiZEI1cldD?=
+ =?utf-8?B?amVxOXdraUNoQkhIamJpVnZOTkF6L2ZoYjhYaXdUN0JuWExPYU5wT3hBSlM4?=
+ =?utf-8?B?ZTZDT1RuczYrZDl6NzFtV2d4eEI5NXdHYVFxSHErZ3h6NnZjakVEa1NRdk9o?=
+ =?utf-8?B?STltNWlVQkd0eXpPc1JBMXF6Z0UrUG1pTEJaZ3JSdXZwTE1hbkxZRzU4TXdr?=
+ =?utf-8?B?K3RJeHdwcUdkTjg0VFhYbDFpakFEckFUUkpCVDBtSjE2QjZEL0RwN20vSW0w?=
+ =?utf-8?B?ZUlqK1l3bW5aTzFyZFJkN0U3VTFIRk9LVyt2akFuMEJaSDR2OW80a2p3bUQx?=
+ =?utf-8?B?SVl6Z3U4RW4wRGdJTE5UMFpnZ0dyenFuWVJpS1AxUVkxRnppNXhFeHZ5NDNt?=
+ =?utf-8?B?cTk3N0dRQ0lTS3pMeHBidVBiU3BkT2tXWGRCL0ZPS1FFRmNKbTJ4T1dtT3NN?=
+ =?utf-8?B?Q3hubkpMS0g2YmJlRmFZTHVZekxvb1hSSjhqL1Y3OHhrcEtWcDAxL3loUXFl?=
+ =?utf-8?B?ekpYTVZENjBSWmVoNjJOU0cxaEJZYjVBbFBBWXM2R05OeHZXYk0weW0zQlpx?=
+ =?utf-8?B?ek01Njk2MDZ6OTZidWdNRGxKMCtxanhCZG1zclpzdVl2eGh5dG1lNWE0UXZl?=
+ =?utf-8?B?RWh4YmwwU1JvY2Vycy9LVU9WaVJpUjNmYlJRMThZcEtkQldwVmY3R1hrRXQ4?=
+ =?utf-8?B?dEN4emtKakVZdnA4aWo5NjVMSlJLdStacmVHTFpDeEl4Sk1CVWo0TEkySjlp?=
+ =?utf-8?B?VW4yNTdrc3lLY2h2dDhpUzhoV3RGSVJWL055RTlTVExZcUNpVnFBcUo3YWt3?=
+ =?utf-8?B?Wm9XVG1XaDFSS2JLdGNjTmV2SndDOG1JeW8wUFZBTEFLYXRXSm5RcURBOWJw?=
+ =?utf-8?B?MHNMOGVVSSs0V3ZQQlFXV0J3Qmh2a0czSFJHbEswNVVxcXp1SkRHTVd3VXhW?=
+ =?utf-8?B?SDA2bWtsMDMzcUYyR29oMWV1Z0MvQUJzaG53WlptVE1tZ01mcTlJU055WFlx?=
+ =?utf-8?B?Q25mZXRieS9ITTljUk9qOGQydnkyTy80V0tnMWpxYVBDMFFKSW5vODZ1M3ov?=
+ =?utf-8?B?YXNGVUhaeWp4VkNhdzU5Q1NnakhqVFE3Rm1RZXNuZUw1cndpUWpNQkQ1cDJB?=
+ =?utf-8?B?eFpmcVFWaVlsRndjV1dmeXFmN1pCNmR1WGxheWdvWjJBSHdpKzhpOHcvaWtm?=
+ =?utf-8?B?a01DZUp1UGQ2bUtTTzJsTFRyVlh1V1ozMU40YXlzQXZEOFVYaWkxUDFTUTRL?=
+ =?utf-8?B?QlVYYkprLzlHelRDdlJlaXhsb1J4SzVEK2I1elgyQnVWbjF5bTZUbG1hZWNQ?=
+ =?utf-8?B?RHpGN09ZTUlHeEZkMXdSRVNsK2kzbTkvMWcrQ2FZcXlxWjNJcTRiSmZJaXVS?=
+ =?utf-8?Q?dDu1nFUawClOlr5gLh+m35pCpldROkFY?=
+MIME-Version: 1.0
+
+--000000000000447c4c06108ffda9
+Content-Type: text/plain; charset="UTF-8"
+
+From Gmail
+
+--000000000000447c4c06108ffda9
+Content-Type: text/html; charset="UTF-8"
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><div dir="ltr">From Gmail</div>
+
+--000000000000447c4c06108ffda9--

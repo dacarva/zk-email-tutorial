@@ -1,0 +1,87 @@
+Delivered-To: david@tropykus.com
+Received: by 2002:a98:915a:0:b0:1ed:3cdb:9b4a with SMTP id v26csp2100275eiv;
+        Sun, 4 Feb 2024 11:13:27 -0800 (PST)
+X-Received: by 2002:a25:8c0b:0:b0:dbc:b927:c5f9 with SMTP id k11-20020a258c0b000000b00dbcb927c5f9mr9322527ybl.6.1707074007134;
+        Sun, 04 Feb 2024 11:13:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707074007; cv=none;
+        d=google.com; s=arc-20160816;
+        b=u/9HSaf7G05I9GZTbZqfI7r4/HQG+hv/EYKFGoRx37In0ed8v8wKwOq8jf9lKXM4ko
+         BGwkdqWymV8SfsizrEJLFsGmVvYvQLps4LgoV3zFLOTL828ayPeMEweciqsbFxBtGa1l
+         ajxbPtjFbIUu/uiLuKt+UwOue5z4fkjq/GeegVmFMrEudB1EoqH7YqKv+gFWxifjnMne
+         yc3AK+Nd2Mc5xO2b7pcjKcYci1vkbBzVg2MvaC5P/i6N5DvjFueWD1w40vbRZdGg/fej
+         VAuIWMdWRQO2dCvYUOKdmaRYJa/dCUD/lekchxGM2/+tDOZYdFIlQyzVkGGPgwAlhsnY
+         wvbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=qcwTgIrawVB9kexkhD1ANPOnQkqisDyfOUEYEEyK/aA=;
+        fh=cXoDxqPBUYSYVW8OWkMLupVs+Yiuo7rd8CVxbYUlFCQ=;
+        b=SNoCl+5PgUld6K7I1JNFTTfylDn1tIefyP84V1UT6q3k7xt18wUf4M/OUzMUdOunZG
+         zf3zNIOuhkA7WqXjx2EBJez4uX8ehuva2HJ9j/N2YWYPhl32WXS5nvhJ2IW7sv0VTk13
+         XTmzl0QewvgbovD8grLu3+8HGRqERfWHVvwBzhFdeQmCqQx2YdhOgCuHD7BK8vnooFvs
+         5JaIx3ezqIHpPrXIYTHr1aM+NUYdXbQHwi+nVvKwTNylH/UtRajo+vwv4FdXziqbFxo9
+         NMEYRItQTj1JAVilQY6DYjz3i52mZRW+CNSPJcU++byZ5IO/t9ScrK/35Pa/WXjIBO3O
+         7+bw==;
+        darn=tropykus.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Y8xtCoHL;
+       spf=pass (google.com: domain of davidfelipec88@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=davidfelipec88@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <davidfelipec88@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id dr18-20020a056902241200b00dc26992dd29sor1723013ybb.1.2024.02.04.11.13.26
+        for <david@tropykus.com>
+        (Google Transport Security);
+        Sun, 04 Feb 2024 11:13:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of davidfelipec88@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Y8xtCoHL;
+       spf=pass (google.com: domain of davidfelipec88@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=davidfelipec88@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707074006; x=1707678806; darn=tropykus.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=qcwTgIrawVB9kexkhD1ANPOnQkqisDyfOUEYEEyK/aA=;
+        b=Y8xtCoHLstM4EY9OyXVwQch0gyXklJirkprKIScmrXTxzk6pi81hu5SsFX055U2Zm6
+         6Ae4TtU7l+qwBz4sWfeV1shcptAL6otDu6XIYrVIvuWf9c78eSje7TI7NkbLLu5mOG08
+         2ZMzerUZ6NK1fjKoKUAG6v13xTWuRHie3yNEsa1l6nj663lhWnT8sEyOncpbnrDOjJjP
+         7rCYI8gIcaC9qemT/Psvb/nei1DGLBw58yTXYJ/u5BADcDEwPH5k0l4uQVDnDNTooxwv
+         ueMuuHg+fty3HwNlo5RdPjtiDgTYlylKrP9n/JPtCZiQ1yNTiThGe4/LTsYWTxe5fFQj
+         NC1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707074006; x=1707678806;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=qcwTgIrawVB9kexkhD1ANPOnQkqisDyfOUEYEEyK/aA=;
+        b=h7QaZj+De4w8YNezv+xjRDcRN5hWVKc3Mh/OFDH/b1rzFdNKiOSPKLXJQmI9L+bV9i
+         9FS38SnEERHmLMLZAjUSNzNeTfpQNJxHbIvKWBv4qvO+2ZYpCf7mgXR/g+4sXoh6okau
+         E1fgd5GVeZEgdTOvlW9fuLIYY/6isiEpCyXXHOFKHuMb/BPRQJi+Y0YwW1+ekH4qbAx7
+         hIoL0B6Ivw6RkJiRRrTHYrYAbHETlxUdfSyw+j6czALOKHyCKENompaTKZlf08+AK1wT
+         Kw/8Wqvfv6JeLKU2iHEJsCElh35ue/BadyAxhl0u3sPKP29YVBnHcE6FVx98hcwbeXph
+         neFg==
+X-Gm-Message-State: AOJu0YxpSqW/19s1WqFzje2Z/D4Ptv99wr9kse4GDGDYAIv/hHbUkpJv
+	amMmYdd3Y5yB6Ml2p7sCaTg/42qPIEgRsKLRgXdLiDN59BmHev+X2qF2rBCvtae0bxVqxi/jLel
+	CmgfdR+daWbEoGMaikiYfI40Lhl4bJGDdli12lQ==
+X-Google-Smtp-Source: AGHT+IFZJzkS8dRcRxS0WyPMC9v70V29pGD3Cjbg7bvG8ahGkhpq4uBDTPa3A89E+U5ewIBgeUL6IT7mVJWqskVLXiw=
+X-Received: by 2002:a05:6902:543:b0:dc6:cf8e:8f97 with SMTP id
+ z3-20020a056902054300b00dc6cf8e8f97mr2645502ybs.27.1707074006171; Sun, 04 Feb
+ 2024 11:13:26 -0800 (PST)
+MIME-Version: 1.0
+From: David Carvajal <davidfelipec88@gmail.com>
+Date: Sun, 4 Feb 2024 14:13:15 -0500
+Message-ID: <CAF2wv30rNXnoRnhm3MPfHrcK4YZbUVbi5TEYo+3D=mPh+-ti2w@mail.gmail.com>
+Subject: Hello World
+To: "david@tropykus.com" <david@tropykus.com>
+Content-Type: multipart/alternative; boundary="000000000000be477c061093233d"
+
+--000000000000be477c061093233d
+Content-Type: text/plain; charset="UTF-8"
+
+Sent from my GMail
+
+--000000000000be477c061093233d
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Sent from my GMail</div>
+
+--000000000000be477c061093233d--

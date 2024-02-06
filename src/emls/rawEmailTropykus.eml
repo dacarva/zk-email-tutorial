@@ -1,0 +1,155 @@
+Received: from CY5PR19MB6387.namprd19.prod.outlook.com (2603:10b6:930:20::18)
+ by BY5PR19MB3908.namprd19.prod.outlook.com with HTTPS; Sun, 4 Feb 2024
+ 15:26:30 +0000
+Received: from SN4PR0501CA0132.namprd05.prod.outlook.com
+ (2603:10b6:803:42::49) by CY5PR19MB6387.namprd19.prod.outlook.com
+ (2603:10b6:930:20::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7249.33; Sun, 4 Feb
+ 2024 15:26:27 +0000
+Received: from SN1NAM02FT0057.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:803:42:cafe::c5) by SN4PR0501CA0132.outlook.office365.com
+ (2603:10b6:803:42::49) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7270.16 via Frontend
+ Transport; Sun, 4 Feb 2024 15:26:27 +0000
+Authentication-Results: spf=temperror (sender IP is 209.85.218.54)
+ smtp.mailfrom=tropykus.com; dkim=pass (signature was verified)
+ header.d=tropykus-com.20230601.gappssmtp.com;dmarc=none action=none
+ header.from=tropykus.com;
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of tropykus.com: DNS Timeout)
+Received: from mail-ej1-f54.google.com (209.85.218.54) by
+ SN1NAM02FT0057.mail.protection.outlook.com (10.97.4.123) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7270.14 via Frontend Transport; Sun, 4 Feb 2024 15:26:26 +0000
+X-IncomingTopHeaderMarker:
+ OriginalChecksum:0EE86AB82853CCE6B8357782224FEAC5F15CF7028D58DC01224CEA418253FEA1;UpperCasedChecksum:E35F43FBF2E87291C13ABF4C90E2DA9D9F0069E468F7666DDE08CD1DC26C9125;SizeAsReceived:2471;Count:13
+Received: by mail-ej1-f54.google.com with SMTP id a640c23a62f3a-a30e898db99so102738066b.0
+        for <da-carva@hotmail.com>; Sun, 04 Feb 2024 07:26:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tropykus-com.20230601.gappssmtp.com; s=20230601; t=1707060385; x=1707665185; darn=hotmail.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=3T5dN3T1XHbkf7LAb5aqZ8Qo0hA3aLsyNSDc3SxIdi0=;
+        b=1JsdArPcr6ijKzJ45tpQMFquGSTBzQ+7gull4V6lnPWofhAntIC8rf2TfKCyZ/RjLE
+         OKJjRuW3bJAEBB52kxRt7vnL2H3NUX/XysUxlsT5uent5boxl1Hyil8dq8pSuZWNUTKS
+         oT+gw86Ed7ZFdWTE5LJ/EODytpie9EheLMlWSEQj8tc7gasl/IMrZtVuk9Ccl8M13ozA
+         ljNewb30aY5KWKlI6IrfpAV6RXddDybrVe9l6hAN3CKBThhSjszoYb3I3Q5sFdJCw8Wk
+         DWmu299IM9ybiJ+AOGikkEzffOm82V5nVVDdaUaj9PuXjkZusmt4RK/vfMFSsTbVdBBr
+         V7fA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707060385; x=1707665185;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=3T5dN3T1XHbkf7LAb5aqZ8Qo0hA3aLsyNSDc3SxIdi0=;
+        b=Siklrj8CKKCUTWHafngEciwaWG1u30d/sqxqesclcLZhTzjlliXJ6ASKOzzTISQTdq
+         VgA25mwD7HKNK8jTmc27dC8+/Og+KHFGmgB9q+YBqB9Ce+VGKm8salQr0vLABkObIF5A
+         x6dky+MSfzo5OzMjmnK+mxEzffshOOznAfQ2NyMBAtDwr/TsZzqNViz0CMo3hHhypgFe
+         +lppOpdrwWg6TTFLueHXdDsHoQrIww3+Y55jpdrdwf52Etzr2uOmmxJ0Pgvgxkemr2lV
+         UDlHCnLXj5uSZ7Gsqn+M7ltL+hNlXeegbhCfZ2u3jmNT8bpDVHIwFP/Nfjyswj/poEiT
+         Xjiw==
+X-Gm-Message-State: AOJu0YxO4W1otCNbP5LazhpYmQCOwMUd7URJ+QAj8bYkWJLRGLGZVY/5
+	SxDCwcI59eOdlxpIESSqpuKaJSVyaUPE8c3X3hrRcAkMGirvBSaPdrI/80hx7PQ6M3sGcm44MSm
+	WpD8NLTf9GY2UaeDTcd9psXye4Cprj8CC56mWurCHcEtCkFQ5ELwIog==
+X-Google-Smtp-Source: AGHT+IFnPt3KhDcNOiKIImllc9SONYXtzZ0HxvBRsiOkNnLJVwu08sdz06Zkt/ck9N9WgADwScr913y+WSJTElgmk1w=
+X-Received: by 2002:a50:9b5b:0:b0:560:3afe:3b28 with SMTP id
+ a27-20020a509b5b000000b005603afe3b28mr1298102edj.0.1707060385071; Sun, 04 Feb
+ 2024 07:26:25 -0800 (PST)
+From: David Carvajal <david@tropykus.com>
+Date: Sun, 4 Feb 2024 10:26:14 -0500
+Message-ID: <CAHMM288fOodjKSVBFgY8zVvt2hEGu38wADbqOVxbjK+xvtU2vg@mail.gmail.com>
+Subject: Hello world
+To: "da-carva@hotmail.com" <da-carva@hotmail.com>
+Content-Type: multipart/alternative; boundary="000000000000dcd54c06108ff7e6"
+X-IncomingHeaderCount: 13
+Return-Path: david@tropykus.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Feb 2024 15:26:26.1852
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 497c9a57-7f1c-4828-0059-08dc2595a6ff
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ SN1NAM02FT0057:EE_|CY5PR19MB6387:EE_|BY5PR19MB3908:EE_
+X-MS-Exchange-Organization-AuthSource:
+ SN1NAM02FT0057.eop-nam02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 2/4/2024 3:26:17 PM
+X-MS-Office365-Filtering-Correlation-Id: 497c9a57-7f1c-4828-0059-08dc2595a6ff
+X-MS-Exchange-EOPDirect: true
+X-Sender-IP: 209.85.218.54
+X-SID-PRA: DAVID@TROPYKUS.COM
+X-SID-Result: NONE
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2024 15:26:26.1539
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 497c9a57-7f1c-4828-0059-08dc2595a6ff
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource:
+ SN1NAM02FT0057.eop-nam02.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+ 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR19MB6387
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.2396666
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7249.032
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;ex:0;psp:0;auth:0;dest:I;ENG:(5062000305)(920221119095)(90000117)(920221120095)(90005022)(91005020)(91035115)(9050020)(9100341)(944500132)(2008001134)(2008121020)(4810010)(4910033)(9575002)(10195002)(9320005)(120001);
+X-Message-Info:
+	qZelhIiYnPnF9fG8KflIMMZtsZfApPkF3NnSuMUoWRNcz8Wdanc+HLwGYdvto4vF7ik92vyvE+sCjjtLOJOYNfHguyD/3YeQj6Y5YJ21mOOTtCH8Gc6bGgWvce6W1f9B7DHby0qYsEvotDreXUK8OO2B5lTAjruUf57mIHHtoc6b7gZ6L38cpYSpEd/8bF24zgxl+Sfs1dY=
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0xO0Q9MTtHRD0xO1NDTD0z
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?S0lzazFUL3JwOHMrSER0MU56WkxhWXFPY1FaWGlvUHhBc1YyS251SEZ5anFh?=
+ =?utf-8?B?eUFkclZUV1k5QUxEaTJKMVk5L0t0UzQ3TTR3NWJML2ZkNEdVUU9NcHZ6eVo0?=
+ =?utf-8?B?ellvcnRzTEduQVhvbWpHcGM5Y2xoUFBuWVI0NHNNejlTYTAraytuclVsVDVv?=
+ =?utf-8?B?VE92WnJnZytObVlaTFN0eHgrZ2J2MDg4Uyt3bUkwNEY5SWRZL3dRcjV3MUJJ?=
+ =?utf-8?B?bmtIellVd3lORWthNXpKOS93U3lkZ0lXSUlyRmhkTUpHTjZYY3NFT1JhUHh2?=
+ =?utf-8?B?UUZzUWxLcFRsZTNMa0tpQm5lT3dSV2dqUWNwVG5WTm9lZjc5aWtESVQ2U2FE?=
+ =?utf-8?B?QXRFSHhNL2E0M25razVQM3ZvYVhzblErZDhlODQzTkd1MkRyTlYyYnJkbEtD?=
+ =?utf-8?B?UmtMWnFoa3dQQTc3SzA2eGE1dU94c0JPQWNXRFF1bkhETWU4eTJXc3lCaEpQ?=
+ =?utf-8?B?bWZVK01ZWUptMXMzbVdUTVE2TUZnYStSemFhNDlMZEVpc09panllTVhTTXVZ?=
+ =?utf-8?B?M1hBSFBra2pvVHl2TWl1blAwTE1xQWdReVBmWXZHeE8yWmUrZWdPV29KdTNC?=
+ =?utf-8?B?V3hFMHZ1aVFFdzhVbk5MeEtQc0ErMXZGOC9KWEYwWjZielU5NXJkZG1UN1pn?=
+ =?utf-8?B?b25QV0w1U2JHT3dJQ043NUkwN1Q3b3NsWktPY1hacmZMRGUvcDIydVZvTjRy?=
+ =?utf-8?B?akcxL2IxK0ZidzJUOUJjZDFSRCtsei9MdU1ocXpwam8xZFZ3anoxY0VoQzNs?=
+ =?utf-8?B?RFF3UFAwUVgwUXkwcEg1NWI0RXhPUE8wVTFVNUlzbnNYRS92VFBrQ25kbjd1?=
+ =?utf-8?B?RkQ0ekRzbVhlREVBejV3c256WnhIRUxXZkhwMjdDOWRGeFVvUFZTeXBVUnBR?=
+ =?utf-8?B?VGFaR2ZkSFdQRU1GdzN1Q2VPZVZNM2lwczA4QW1ZeC8wMm1STzh6dDhsdFJ3?=
+ =?utf-8?B?KzI2ODlzanJ1ZFRhTDMvUUFWbmtXcjJnb2Z1SkxYSVR2ZVJiYVNBUFFYTE9E?=
+ =?utf-8?B?MVR1WVhpYjYxbUNWNDAvdXUxeE1IOUk2Mi95U3dTUmFIdVN0cjFudkx2Z0lx?=
+ =?utf-8?B?ckQyNDdqd283NW5YWGpKTHVCZ1E2Rjd3blRhMTlSTGpJMldEdmFLVHl0QjIy?=
+ =?utf-8?B?VG1aMU5yR1puaTFnSGFzZEJQYTFRSmtJc3JlNEpPRW8rMTh4dDljSU1FY1pY?=
+ =?utf-8?B?V05QcUJlSDBvNDZwSkZTOHNmZkszWnhsRTJpZDB3MW9RQWthOVhFcFM2NHFt?=
+ =?utf-8?B?WGpFOFFtdXZibVZTdERVV3RNUkxPMzVPeXI2ck42SVltaFhDUTJ0Tk1tWG0v?=
+ =?utf-8?B?cUNoenhTenR6TVlCU3lTLzBjV083Wmh0OGYzczVOMldXOWtFa21NS2lsN1Nq?=
+ =?utf-8?B?Z1lQSHVwN0hwSk5mT1dYOW9Gd1dqZEw5YmdoS3p2Ry94Tm9zTlM4NERsN3NU?=
+ =?utf-8?B?d2d0dEN1RHoxY2xxWUhRUm4wd0xaUk9XTjJMMkFUSzFyd0FQZkppaWhmd01M?=
+ =?utf-8?B?bzJOQjM4Z2xjejZ6bXVML1NPLzJwZEtwSlVSOXZPWXNOWDNLMmtkRncxMHlv?=
+ =?utf-8?B?SnUwTE9wcmVjenZGRk5CWjJ5dkxyVmFBM09GRnV3R2Q4UWFXSjY0dE51Rkpl?=
+ =?utf-8?B?Z0JuMmVYN2M4Q0E5NVZNVTRXZ2lhZ0hpYWZKYVc4ek91alZoL1VzaVlNOWF5?=
+ =?utf-8?B?TVZQUlZmODF0ZWtBOE5mcnhkZ3QrNDNnaUdNU29HRUswa3VGajRQcEZJbEpK?=
+ =?utf-8?B?Mm8waHo0QXI1cERZNTMrTEVZVExHdzBaSldZSTJzelAzN3BVK2lQUVpjMVI5?=
+ =?utf-8?B?OEJzTm5KUzlsRHhDTEg2bEQ2cERFZXJYZUpBUlhlbUY3ZWthbktONjZrTG0v?=
+ =?utf-8?B?UklsczhsSnIxM1RRN0tNblQySjdvcHgxQ1ZmbmpLVVQ3N3d5Uytrdnc3TE5l?=
+ =?utf-8?B?bnhJbDVxcDJNYlRBYWJrelAvWk1SUUxjNEJHNnNDTS9HSi9BbVkzTHhNNGJz?=
+ =?utf-8?B?VThZWkNLR0J3PT0=?=
+MIME-Version: 1.0
+
+--000000000000dcd54c06108ff7e6
+Content-Type: text/plain; charset="UTF-8"
+
+from hackaton
+
+--000000000000dcd54c06108ff7e6
+Content-Type: text/html; charset="UTF-8"
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><div dir="ltr">from hackaton</div>
+
+--000000000000dcd54c06108ff7e6--
