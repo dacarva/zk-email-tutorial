@@ -81,3 +81,8 @@ dist
 *.tmp
 *.temp
 *.swp
+
+credit_score_cpp/
+credit_score_js/
+MyCircuit_cpp/
+MyCircuit_js/
