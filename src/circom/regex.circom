@@ -3,7 +3,7 @@ pragma circom 2.1.5;
 include "@zk-email/zk-regex-circom/circuits/regex_helpers.circom";
 
 // regex: Your credit score is: [0-9][0-9]
-template Test(msg_bytes) {
+template CreditScoreRegex(msg_bytes) {
 	signal input msg[msg_bytes];
 	signal output out;
 

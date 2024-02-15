@@ -54,16 +54,31 @@ template CreditScore(max_header_bytes, max_body_bytes, n, k, pack_size, expose_f
         reveal_email_from_packed <== ShiftAndPackMaskedStr(max_header_bytes, max_email_from_len, pack_size)(from_regex_reveal, email_from_idx);
     }
 
+
+
     var max_score_len = 2;    
     var max_score_from_packed_bytes = count_packed(max_score_len, pack_size);
     signal input credit_score_idx;
-    signal output reveal_credit_score_packed[max_score_from_packed_bytes];
+    // signal output reveal_credit_score_packed[max_score_from_packed_bytes];
 
-    signal(score_regex_out, score_regex_reveal[max_body_bytes]) <== CreditScoreRegex(max_body_bytes)(in_body_padded);
+    // signal (score_regex_out, score_regex_reveal[max_body_bytes]) <== CreditScoreRegex(max_body_bytes)(in_body_padded);
+    // signal is_found_score <== IsZero()(score_regex_out);
+    // is_found_score === 0;
+
+    // reveal_credit_score_packed <== ShiftAndPackMaskedStr(max_body_bytes, max_score_len, pack_size)(score_regex_reveal, credit_score_idx);
+
+    component creditScoreRegex = CreditScoreRegex(max_body_bytes);
+    creditScoreRegex.msg <== in_body_padded;
+    signal output credit_score[max_score_len]; // Assuming the score is two digits
+
+    signal score_regex_out <== creditScoreRegex.out;
     signal is_found_score <== IsZero()(score_regex_out);
     is_found_score === 0;
+    for (var i = 0; i < max_score_len; i++) {
+        credit_score[i] <== creditScoreRegex.reveal0[i];
+    }
 
-    reveal_credit_score_packed <== ShiftAndPackMaskedStr(max_body_bytes, max_score_len, pack_size)(score_regex_reveal, credit_score_idx);
+
 
 }
 
